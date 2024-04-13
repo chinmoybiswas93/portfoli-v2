@@ -3,6 +3,7 @@ import Intro from "@/components/Intro";
 import Navbar from "@/components/Navbar";
 import About from "@/components/Sections/About";
 import Jobs from "@/components/Sections/Jobs";
+import Projects from "@/components/Sections/Projects";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <main className="pt-24 lg:w-1/2 lg:py-24">
         <About></About>
         <Jobs></Jobs>
+        <Projects></Projects>
       </main>
     </div>
   );

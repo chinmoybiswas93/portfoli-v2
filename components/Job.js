@@ -5,15 +5,27 @@ const Job = async ({ id }) => {
   const job = await getJobByID(id);
   const { projects, tools } = job.acf;
 
-  const handleOnClick = () => {
-    window.location.href = job.acf.url;
+  const formatDate = (dateString) => {
+    // Split the date string into parts
+    const parts = dateString.split(" ");
+
+    // Get the month abbreviation
+    const monthAbbreviation = parts[0].substring(0, 3);
+
+    // Concatenate the month abbreviation and year
+    const formattedDate = `${monthAbbreviation} ${parts[1]}`;
+
+    return formattedDate;
   };
+
   return (
     <>
       <div className="grid grid-cols-8 gap-4 hover:bg-slate-800 p-4 rounded-md mb-4">
-        <div className="flex content-start col-span-2 flex-wrap text-sm font-semibold mt-1">
-          <span>{job?.acf?.start_date} </span> <span>-</span>
-          <span>{job?.acf?.end_date ? job?.acf?.end_date : "Present"}</span>
+        <div className="flex content-start col-span-2 flex-wrap mt-1">
+          <span>{formatDate(job?.acf?.start_date)}</span> {" - "}
+          <span>
+            {job?.acf?.end_date ? formatDate(job?.acf?.end_date) : "Present"}
+          </span>
         </div>
         <div className="col-span-6">
           {" "}
@@ -26,7 +38,7 @@ const Job = async ({ id }) => {
             <ul className="flex gap-2 my-2">
               {projects.map((project, index) => (
                 <Link className="block" href={project?.url} key={index}>
-                  <li className="flex align-middle items-center font-semibold hover:text-slate-50 text-slate-200">
+                  <li className="flex align-middle items-center font-semibold text-sm hover:text-slate-50 text-slate-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"

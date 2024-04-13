@@ -23,12 +23,14 @@ body {
   text-transform: uppercase;
   font-size: 14px;
   position: relative;
+  transition: all .3s ease-in-out;
 }
 
 .nav-link.active {
   color: #e2e8f0;
   font-weight: 600;
   padding-left: 90px;
+  transition: all .3s ease-in-out;
 }
 .nav-link::before {
   content: "";
@@ -39,8 +41,10 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  transition: all .3s ease-in-out;
 }
 .nav-link.active::before {
   width: 80px;
   background-color: white;
+  transition: all .3s ease-in-out;
 }

@@ -1,5 +1,7 @@
 import { getJobs } from "@/lib/api";
 import Job from "../Job";
+import Link from "next/link";
+import ViewButton from "../ViewButton";
 
 const Jobs = async () => {
   const jobs = await getJobs();
@@ -11,6 +13,15 @@ const Jobs = async () => {
       {jobs.map((job) => (
         <Job key={job.id} id={job.id} />
       ))}
+
+      <ViewButton
+        href={
+          "https://chinmoybiswas.com/wp-content/uploads/2024/02/Wordpress-Developer-Resume-Chinmoy-Biswas.pdf"
+        }
+        target={"_blank"}
+      >
+        View Full Resume
+      </ViewButton>
     </section>
   );
 };
