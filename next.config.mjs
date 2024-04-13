@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// next.config.mjs
 
-export default nextConfig;
+const nextConfig = {
+    images: {
+      domains: ['app-portfolio.local'], // Add your hostname here
+    },
+  };
+  
+  export default nextConfig;
+  
