@@ -1,6 +1,5 @@
 import { getJobs } from "@/lib/api";
 import Job from "../Job";
-import Link from "next/link";
 import ViewButton from "../ViewButton";
 
 const Jobs = async () => {
