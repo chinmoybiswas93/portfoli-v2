@@ -5,7 +5,7 @@ const Jobs = async () => {
   const jobs = await getJobs();
   return (
     <section
-      id="jobs"
+      id="experience"
       className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
     >
       {jobs.map((job) => (
