@@ -3,7 +3,7 @@ import Link from "next/link";
 const Contacts = () => {
   return (
     <div>
-      <ul className="flex flex-row gap-4">
+      <ul className="flex flex-row gap-4 pt-8 sm:pt-0">
         <li >
           <Link href={"#"}>
             <span className="hidden">GitHub</span>

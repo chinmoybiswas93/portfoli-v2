@@ -1,4 +1,4 @@
-import Post from "@/components/post";
+import Post from "@/components/Post";
 import { getPosts } from "@/lib/api";
 
 export default async function Project() {

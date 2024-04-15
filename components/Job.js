@@ -20,14 +20,14 @@ const Job = async ({ id }) => {
 
   return (
     <>
-      <div className="grid grid-cols-8 gap-4 hover:bg-slate-800 p-4 rounded-md mb-4">
-        <div className="flex content-start col-span-2 flex-wrap mt-1">
+      <div className="grid grid-cols-8 gap-4 sm:hover:bg-slate-800 sm:p-4 rounded-md sm:mb-4 mb-12">
+        <div className="flex content-start sm:col-span-2 col-span-8 flex-wrap mt-1">
           <span>{formatDate(job?.acf?.start_date)}</span> {" - "}
           <span>
             {job?.acf?.end_date ? formatDate(job?.acf?.end_date) : "Present"}
           </span>
         </div>
-        <div className="col-span-6">
+        <div className="sm:col-span-6 col-span-8">
           {" "}
           <p className="font-semibold text-lg text-slate-200">
             {job?.title?.rendered} @{" "}

@@ -3,7 +3,7 @@ import React from "react";
 
 const ViewButton = ({ href, children, target }) => {
   return (
-    <div className="text-slate-200 font-semibold pt-4 px-4">
+    <div className="text-slate-200 font-semibold sm:pt-4 sm:px-4">
       <Link target={target} href={href}>
         {children}
         <svg

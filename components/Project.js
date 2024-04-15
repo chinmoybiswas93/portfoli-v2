@@ -7,29 +7,39 @@ import Link from "next/link";
 const Project = async ({ project }) => {
   const { guid } = await getPostFeaturedImage(project.id);
   const { rendered: featured_image } = guid;
-  console.log(project.acf.tools_used);
+  console.log(project.acf);
   return (
     <div
-      className="grid grid-cols-8 gap-6 hover:bg-slate-800 p-4 rounded-md mb-4"
+      className="grid grid-cols-8 gap-6 sm:hover:bg-slate-800 hover:cursor-pointer sm:p-4 rounded-md sm:mb-4 mb-12"
       key={project.id}
     >
-      <div className="relative col-span-3">
-        <Image
-          src={featured_image}
-          className="rounded border border-slate-200"
-          alt="Featured Image"
-          width={200}
-          height={150}
-          style={{
-            objectFit: "cover",
-            height: "120px",
-            objectPosition: "top center",
-          }}
-        />
+      <div className="relative sm:col-span-3 col-span-8">
+        <Link
+          target="_blank"
+          className="flex items-center"
+          href={project.acf.live_site}
+        >
+          <Image
+            src={featured_image}
+            className="rounded border border-slate-200"
+            alt="Featured Image"
+            width={200}
+            height={150}
+            style={{
+              objectFit: "cover",
+              height: "120px",
+              objectPosition: "top center",
+            }}
+          />
+        </Link>
       </div>
-      <div className="col-span-5">
+      <div className="sm:col-span-5 col-span-8">
         <div>
-          <Link target="_blank" className="flex items-center" href={project.acf.live_site}>
+          <Link
+            target="_blank"
+            className="flex items-center mb-1 sm:mb-0"
+            href={project.acf.live_site}
+          >
             <h2 className="text-lg text-slate-200 font-semibold">
               {he.decode(project.title.rendered)}
             </h2>
@@ -37,7 +47,7 @@ const Project = async ({ project }) => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              class="inline-block h-4 w-4 shrink-0 transition-transform hover:-translate-y-1 hover:translate-x-1 focus-visible::-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px hover:cursor-pointer"
+              className="inline-block h-4 w-4 shrink-0 transition-transform hover:-translate-y-1 hover:translate-x-1 focus-visible::-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px hover:cursor-pointer"
               aria-hidden="true"
             >
               <path
@@ -49,7 +59,7 @@ const Project = async ({ project }) => {
           </Link>
         </div>
         <div className="text-base">
-          <HtmlToText>{project.acf.tools_used}</HtmlToText>
+          <p>{project.acf.description}</p>
         </div>
       </div>
     </div>

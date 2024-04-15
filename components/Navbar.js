@@ -28,7 +28,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="flex flex-col mt-16">
+    <div className="sm:flex flex-col mt-16 hidden">
       <NavLink href="#about" active={activeSection === "about"}>
         About
       </NavLink>
