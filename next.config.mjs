@@ -1,10 +1,15 @@
 // next.config.mjs
 
 const nextConfig = {
-    images: {
-      domains: ['app-portfolio.local'], // Add your hostname here
-    },
-  };
-  
-  export default nextConfig;
-  
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "app.chinmoybiswas.com",
+        pathname: "**",
+      },
+    ],
+  },
+};
+
+export default nextConfig;

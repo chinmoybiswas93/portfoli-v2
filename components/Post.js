@@ -5,7 +5,6 @@ import he from "he";
 const Post = async ({ post }) => {
   const { guid } = await getPostFeaturedImage(post.id);
   const { rendered: featured_image } = guid;
-  console.log(post);
   return (
     <div key={post.id}>
       <h2 className="text-xl">{he.decode(post.title.rendered)}</h2>

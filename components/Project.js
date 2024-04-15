@@ -7,7 +7,6 @@ import Link from "next/link";
 const Project = async ({ project }) => {
   const { guid } = await getPostFeaturedImage(project.id);
   const { rendered: featured_image } = guid;
-  console.log(project.acf);
   return (
     <div
       className="grid grid-cols-8 gap-6 sm:hover:bg-slate-800 hover:cursor-pointer sm:p-4 rounded-md sm:mb-4 mb-12"
@@ -51,9 +50,9 @@ const Project = async ({ project }) => {
               aria-hidden="true"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </Link>
